@@ -1,14 +1,32 @@
-# Overview
+# Perlin Noise Simulator
 
-This project simulates perlin noise. The project does so by generating a grid of hidden vectors. Then for each point between those vectors we calculate the distance to the vectors and interpolate those values. After smoothing everything out you will get random noise.
+## Overview
+This project implements a 3D Perlin noise simulator.  
 
-The program currently uses 3d vectors in order to calculate the noise. The third dimension allows us to see the noise evolve. The program travels through the third dimention to see the different frames of noise. There is a limit to the number of frames we draw so when we get to the end we loop back allowing the animation to continue.
+It generates a grid of hidden vectors and calculates interpolated distances for each point between the vectors. Smoothing these values produces natural-looking random noise.  
 
-# Usage
+The third dimension allows the noise to evolve over time. The program animates through this third dimension frame by frame, looping when it reaches the end to create a continuous animation.
 
-To run the program simply run the [pixels](pixels) file in a lynix environment with SFML installed. The program will prompt the user for detail and vectors per dimension value. The detail is how many pixels are between each vector. The vectors per dimenision allows the user to change how many vectors there are. The detail essentially changes how smooth the noise looks and the number of vectors creates a larger grid which gives you a wider area for noise. Scaling these values up high will take exponentially longer to run.
+---
 
-# Examples
+## Usage
+1. Run the `pixels` program on a Linux system with **SFML** installed.  
+2. The program will prompt for:
+   - **Detail**: number of pixels between each vector (higher values → smoother noise)  
+   - **Vectors per dimension**: number of vectors along each axis (higher values → larger noise grid)  
+   
+> ⚠ Increasing these values significantly will increase computation time exponentially.
 
-[<img src="manyVectors.gif" width="320" alt="Perlin Noise Demo With Many Vectors">](10x50perlinNoiseVideo.mp4)
+---
+
+## Examples
+
+[<img src="manyVectors.gif" width="320" alt="Perlin Noise Demo With Many Vectors">](10x50perlinNoiseVideo.mp4)  
 [<img src="detailed.gif" width="320" alt="Perlin Noise Demo With Detail">](50x10perlinNoiseVideo.mp4)
+
+---
+
+## Tech Stack
+- C++  
+- SFML for visualization  
+- Custom Perlin noise implementation
